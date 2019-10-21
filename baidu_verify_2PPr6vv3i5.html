@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="mysql,nodejs,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="前言这是由于mysql自带的一段时间无动作会自动关闭的机制">
-<meta name="keywords" content="mysql,nodejs">
-<meta property="og:type" content="article">
-<meta property="og:title" content="解决nodejs的Connection lost ：The server closed the connection">
-<meta property="og:url" content="https://apading.xyz/node mysql lost/index.html">
+<meta name="description" content="2PPr6vv3i5">
+<meta name="keywords" content="jquery,js,jquery,javascript,html5,nodejs,前端,程序员,Coder,html,css,css3,">
+<meta property="og:type" content="website">
+<meta property="og:title" content="apad station">
+<meta property="og:url" content="https://apading.xyz/baidu_verify_2PPr6vv3i5.html">
 <meta property="og:site_name" content="apad station">
-<meta property="og:description" content="前言这是由于mysql自带的一段时间无动作会自动关闭的机制">
+<meta property="og:description" content="2PPr6vv3i5">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-11T17:01:34.719Z">
+<meta property="og:updated_time" content="2019-10-21T07:57:02.892Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="解决nodejs的Connection lost ：The server closed the connection">
-<meta name="twitter:description" content="前言这是由于mysql自带的一段时间无动作会自动关闭的机制">
+<meta name="twitter:title" content="apad station">
+<meta name="twitter:description" content="2PPr6vv3i5">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://apading.xyz/node mysql lost/">
+  <link rel="canonical" href="https://apading.xyz/baidu_verify_2PPr6vv3i5.html">
 
 
 
 
 
-  <title>解决nodejs的Connection lost ：The server closed the connection | apad station</title>
+  <title> | apad station</title>
   
 
 
@@ -304,169 +304,33 @@
 
   <div id="posts" class="posts-expand">
     
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://apading.xyz/node mysql lost/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="apad">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="apad station">
-    </span>
-
     
+    
+    <div class="post-block page">
       <header class="post-header">
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">解决nodejs的Connection lost ：The server closed the connection</h1>
-        
+	<h1 class="post-title" itemprop="name headline"></h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-13T00:00:00+08:00">
-                2019-09-13
-              </time>
-            
 
-            
 
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/node mysql lost/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/node mysql lost/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="page-pv"><i class="fa fa-file-o"></i>  阅读数
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
-            </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+</header>
 
       
       
-
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这是由于mysql自带的一段时间<strong>无动作</strong>会自动关闭的机制</p>
-<a id="more"></a>
-<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><blockquote>
-<p>使用闭包可以完美解决问题</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mysql = <span class="built_in">require</span>(<span class="string">'mysql'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> sqlConfig = &#123;</span><br><span class="line">    host: <span class="string">'localhost'</span>,</span><br><span class="line">    user: <span class="string">'root'</span>,</span><br><span class="line">    password: <span class="string">'pwd'</span>,</span><br><span class="line">    database: <span class="string">'dbbase'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> conn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> connection = mysql.createConnection(sqlConfig)</span><br><span class="line">    connection.connect()</span><br><span class="line">    connection.on(<span class="string">'error'</span>,err=&gt;&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Re-connecting lost connection: '</span>);</span><br><span class="line">        connection = mysql.createConnection(sqlConfig)</span><br><span class="line"></span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> connection</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = conn()</span><br></pre></td></tr></table></figure>
+      <div class="post-body">
+        
+        
+          2PPr6vv3i5
+        
+      </div>
+      
+      
       
     </div>
     
     
     
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/mysql/" rel="tag"># mysql</a>
-          
-            <a href="/tags/nodejs/" rel="tag"># nodejs</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/multer express/" rel="next" title="nodejs中用multer和express实现简单文件上传功能">
-                <i class="fa fa-chevron-left"></i> nodejs中用multer和express实现简单文件上传功能
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/Hello-World-(again)/" rel="prev" title="Hello World (again)">
-                Hello World (again) <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 
@@ -502,17 +366,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -563,22 +418,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解决"><span class="nav-number">2.</span> <span class="nav-text">解决</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
