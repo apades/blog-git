@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="nodejs,multer,">
+  <meta name="keywords" content="gulp,">
 
 
 
@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="前言鉴于官方文档有些地方没说清除自己去研究出来的">
-<meta name="keywords" content="nodejs,multer">
+<meta name="description" content="前言虽然网上有许多类似的gulp3.0的task和series配套用法：gulp.task(&amp;#39;server&amp;#39;, gulp.series(&amp;#39;connect&amp;#39;, &amp;#39;watch&amp;#39;))但还是莫名其妙没触发更新">
+<meta name="keywords" content="gulp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="nodejs中用multer和express实现简单文件上传功能">
-<meta property="og:url" content="https://apading.xyz/multer express/index.html">
+<meta property="og:title" content="gulp4.0使用gulp-connect插件">
+<meta property="og:url" content="https://apading.xyz/posts/41474/index.html">
 <meta property="og:site_name" content="apad station">
-<meta property="og:description" content="前言鉴于官方文档有些地方没说清除自己去研究出来的">
+<meta property="og:description" content="前言虽然网上有许多类似的gulp3.0的task和series配套用法：gulp.task(&amp;#39;server&amp;#39;, gulp.series(&amp;#39;connect&amp;#39;, &amp;#39;watch&amp;#39;))但还是莫名其妙没触发更新">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-11T15:53:22.822Z">
+<meta property="og:updated_time" content="2019-10-24T05:13:02.082Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nodejs中用multer和express实现简单文件上传功能">
-<meta name="twitter:description" content="前言鉴于官方文档有些地方没说清除自己去研究出来的">
+<meta name="twitter:title" content="gulp4.0使用gulp-connect插件">
+<meta name="twitter:description" content="前言虽然网上有许多类似的gulp3.0的task和series配套用法：gulp.task(&amp;#39;server&amp;#39;, gulp.series(&amp;#39;connect&amp;#39;, &amp;#39;watch&amp;#39;))但还是莫名其妙没触发更新">
 
 
 
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="https://apading.xyz/multer express/">
+  <link rel="canonical" href="https://apading.xyz/posts/41474/">
 
 
 
 
 
-  <title>nodejs中用multer和express实现简单文件上传功能 | apad station</title>
+  <title>gulp4.0使用gulp-connect插件 | apad station</title>
   
 
 
@@ -325,7 +325,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://apading.xyz/multer express/">
+    <link itemprop="mainEntityOfPage" href="https://apading.xyz/posts/41474/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="apad">
@@ -342,7 +342,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">nodejs中用multer和express实现简单文件上传功能</h2>
+          <h2 class="post-title" itemprop="name headline">gulp4.0使用gulp-connect插件</h2>
         
 
         <div class="post-meta">
@@ -354,8 +354,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-26T00:00:00+08:00">
-                2019-08-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-01T00:00:00+08:00">
+                2019-10-01
               </time>
             
 
@@ -373,8 +373,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/multer express/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/multer express/" itemprop="commentCount"></span>
+                <a href="/posts/41474/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/41474/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -407,36 +407,11 @@
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>鉴于官方文档有些地方没说清除自己去研究出来的</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>虽然网上有许多类似的gulp3.0的task和series配套用法：<br><code>gulp.task(&#39;server&#39;, gulp.series(&#39;connect&#39;, &#39;watch&#39;))</code><br>但还是莫名其妙没触发更新</p>
 <a id="more"></a>
-<h1 id="前提准备"><a href="#前提准备" class="headerlink" title="前提准备"></a>前提准备</h1><ul>
-<li>express</li>
-<li>multer<h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><h2 id="前端部分"><a href="#前端部分" class="headerlink" title="前端部分"></a>前端部分</h2><h3 id="html"><a href="#html" class="headerlink" title="html"></a>html</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">id</span>=<span class="string">"file"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"submit"</span>&gt;</span>submit<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> &#123; watch,src,dest &#125; = <span class="built_in">require</span>(<span class="string">'gulp'</span>),</span><br><span class="line">    connect = <span class="built_in">require</span>(<span class="string">'gulp-connect'</span>)</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">html</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> src(<span class="string">'src/*.html'</span>)</span><br><span class="line">    .pipe(dest(<span class="string">'dist'</span>))</span><br><span class="line">    .pipe(connect.reload())</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">server</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    connect.server(&#123;</span><br><span class="line">        root: <span class="string">'dist'</span>,</span><br><span class="line">        livereload: <span class="literal">true</span>,</span><br><span class="line">        index: <span class="string">'index.html'</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">watch(<span class="string">'src/*.html'</span>,html) <span class="comment">// 这里虽然尝试过在default里用series作为一个函数，但还是没触发更新</span></span><br><span class="line">exports.default = server</span><br></pre></td></tr></table></figure>
 
-</li>
-</ul>
-<h3 id="js"><a href="#js" class="headerlink" title="js"></a>js</h3><h4 id="原生"><a href="#原生" class="headerlink" title="原生"></a>原生</h4><blockquote>
-<p>因为jq的ajax用起来不习惯自己写了个</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"submit"</span>).addEventListener(<span class="string">'click'</span>,upload)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">upload</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">let</span> file = <span class="built_in">document</span>.getElementById(<span class="string">"file"</span>).files[<span class="number">0</span>]</span><br><span class="line">	postFile(<span class="string">'http://localhost:3000/img'</span>,file,d=&gt;&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">'post ok'</span>);</span><br><span class="line">		<span class="built_in">console</span>.log(d);</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//ajax的方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">postFile</span>(<span class="params">url,file,callback</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">let</span> data = <span class="keyword">new</span> FormData(),</span><br><span class="line">		xhr = <span class="keyword">new</span> XMLHttpRequest()</span><br><span class="line">	</span><br><span class="line">	data.append(<span class="string">'file'</span>,file)<span class="comment">//[1]</span></span><br><span class="line">	</span><br><span class="line">	xhr.open(<span class="string">'POST'</span>,url,<span class="literal">true</span>)</span><br><span class="line">	</span><br><span class="line">	xhr.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(callback) callback(xhr.responseText)</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	xhr.send(data)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>注意js中标记[1]的位置，后面有用到</strong></p>
-<h4 id="jq"><a href="#jq" class="headerlink" title="jq"></a>jq</h4><blockquote>
-<p>其实也差不多</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">upload</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> data = <span class="keyword">new</span> FormData()</span><br><span class="line">		data.append(<span class="string">'file'</span>,<span class="built_in">document</span>.getElementById(<span class="string">"image"</span>).files[<span class="number">0</span>])</span><br><span class="line">	$.ajax(&#123;</span><br><span class="line">		url: <span class="string">'http://localhost:3000/img'</span>,</span><br><span class="line">		type: <span class="string">'POST'</span>,</span><br><span class="line">		data: data,</span><br><span class="line">		<span class="comment">// 下面两个是request的格式相关的，去掉会jq报错</span></span><br><span class="line">		contentType: <span class="literal">false</span>,</span><br><span class="line">		processData: <span class="literal">false</span>,</span><br><span class="line">		success(d)&#123;</span><br><span class="line">			<span class="built_in">console</span>.log(d);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="后端部分"><a href="#后端部分" class="headerlink" title="后端部分"></a>后端部分</h2><h3 id="server-config-js"><a href="#server-config-js" class="headerlink" title="server-config.js"></a>server-config.js</h3><blockquote>
-<p>这是用来配置跨域的</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> app = express()</span><br><span class="line"></span><br><span class="line"><span class="comment">//跨域</span></span><br><span class="line">app.all(<span class="string">'*'</span>,(req,res,next)=&gt;&#123;</span><br><span class="line">    res.header(<span class="string">"Access-Control-Allow-Origin"</span>, <span class="string">"*"</span>);</span><br><span class="line">    res.header(<span class="string">"Access-Control-Allow-Headers"</span>, <span class="string">"X-Requested-With"</span>);</span><br><span class="line">    res.header(<span class="string">"Access-Control-Allow-Methods"</span>,<span class="string">"PUT,POST,GET,DELETE,OPTIONS"</span>);</span><br><span class="line">    res.header(<span class="string">"Content-Type"</span>, <span class="string">"application/json;charset=utf-8"</span>);</span><br><span class="line">    next();</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = app</span><br></pre></td></tr></table></figure>
-
-<h3 id="server-js"><a href="#server-js" class="headerlink" title="server.js"></a>server.js</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> multer = <span class="built_in">require</span>(<span class="string">'multer'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> app = <span class="built_in">require</span>(<span class="string">'./server-config'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 文件上传测试</span></span><br><span class="line"><span class="keyword">var</span> upload = multer(&#123;</span><br><span class="line">    dest: <span class="string">'uploads/'</span> <span class="comment">//这是存放文件的位置</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//[2]</span></span><br><span class="line">app.post(<span class="string">'/img'</span>, upload.single(<span class="string">'file'</span>), (req, res, next) =&gt; &#123;</span><br><span class="line">    <span class="keyword">var</span> img = req.file.path</span><br><span class="line">    <span class="built_in">console</span>.log(img);</span><br><span class="line">    res.send(&#123; <span class="attr">type</span>: <span class="string">'ok'</span> &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>, () =&gt; <span class="built_in">console</span>.log(<span class="string">'server running'</span>))</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>前面的[1]中的 <code>append(&#39;name&#39;,文件)</code><br>对应着[2]中的<code>upload.single(&#39;name&#39;)</code></p>
-</blockquote>
-<h1 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h1><p>存在<code>./uploads/</code>里的文件是用随机码构成的，且没有后缀名</p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>虽然也是第一次上手gulp，之前用过webpack体验下来感觉一个几kb的文件越打包越大了，还是喜欢更直观一点的</p>
 
       
     </div>
@@ -454,9 +429,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/nodejs/" rel="tag"># nodejs</a>
-          
-            <a href="/tags/multer/" rel="tag"># multer</a>
+            <a href="/tags/gulp/" rel="tag"># gulp</a>
           
         </div>
       
@@ -469,14 +442,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/posts/24764/" rel="next" title="简单实现vue-cli下的动态组件">
+                <i class="fa fa-chevron-left"></i> 简单实现vue-cli下的动态组件
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/node mysql lost/" rel="prev" title="解决nodejs的Connection lost ：The server closed the connection">
-                解决nodejs的Connection lost ：The server closed the connection <i class="fa fa-chevron-right"></i>
+              <a href="/posts/63534/" rel="prev" title="test">
+                test <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -621,7 +598,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前提准备"><span class="nav-number">2.</span> <span class="nav-text">前提准备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开始"><span class="nav-number">3.</span> <span class="nav-text">开始</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前端部分"><span class="nav-number">3.1.</span> <span class="nav-text">前端部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#html"><span class="nav-number">3.1.1.</span> <span class="nav-text">html</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#js"><span class="nav-number">3.1.2.</span> <span class="nav-text">js</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原生"><span class="nav-number">3.1.2.1.</span> <span class="nav-text">原生</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jq"><span class="nav-number">3.1.2.2.</span> <span class="nav-text">jq</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后端部分"><span class="nav-number">3.2.</span> <span class="nav-text">后端部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#server-config-js"><span class="nav-number">3.2.1.</span> <span class="nav-text">server-config.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#server-js"><span class="nav-number">3.2.2.</span> <span class="nav-text">server.js</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结束"><span class="nav-number">4.</span> <span class="nav-text">结束</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开始"><span class="nav-number">2.</span> <span class="nav-text">开始</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结语"><span class="nav-number">3.</span> <span class="nav-text">结语</span></a></li></ol></div>
             
 
           </div>
