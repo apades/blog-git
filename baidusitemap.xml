@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://apading.xyz/posts/0/</loc>
+    <lastmod>2019-11-22</lastmod>
+  </url>  <url>
+    <loc>https://apading.xyz/posts/63534/</loc>
+    <lastmod>2019-11-01</lastmod>
+  </url>  <url>
     <loc>https://apading.xyz/posts/49904/</loc>
     <lastmod>2019-10-24</lastmod>
   </url>  <url>
@@ -14,9 +20,6 @@
     <lastmod>2019-10-24</lastmod>
   </url>  <url>
     <loc>https://apading.xyz/posts/9500/</loc>
-    <lastmod>2019-10-24</lastmod>
-  </url>  <url>
-    <loc>https://apading.xyz/posts/63534/</loc>
     <lastmod>2019-10-24</lastmod>
   </url>  <url>
     <loc>https://apading.xyz/posts/50469/</loc>
