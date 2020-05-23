@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="2PPr6vv3i5">
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="距离上次写的的hello world (again)有快4个月了吧，这也是过了一个学期了，借着新年的劲头写下一些关于前端开发的总结吧。">
+<meta name="keywords" content="jquery,js,jquery,javascript,html5,nodejs,前端,程序员,Coder,html,css,css3,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端开发总结（一）">
+<meta property="og:url" content="https://apading.xyz/posts/57045/index.html">
+<meta property="og:site_name" content="apad station">
+<meta property="og:description" content="距离上次写的的hello world (again)有快4个月了吧，这也是过了一个学期了，借着新年的劲头写下一些关于前端开发的总结吧。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020010521350092.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNTM1NjEx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200105214611342.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNTM1NjEx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200105214711449.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNTM1NjEx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200105225334514.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNTM1NjEx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200105220713165.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200105220751134.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNTM1NjEx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200105222558796.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200105221932974.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200105222355804.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNTM1NjEx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020010522224896.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200105222347332.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200105231652282.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNTM1NjEx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200105224002596.png">
+<meta property="og:updated_time" content="2020-05-23T09:15:00.347Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端开发总结（一）">
+<meta name="twitter:description" content="距离上次写的的hello world (again)有快4个月了吧，这也是过了一个学期了，借着新年的劲头写下一些关于前端开发的总结吧。">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/2020010521350092.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNTM1NjEx,size_16,color_FFFFFF,t_70">
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://apading.xyz/posts/57045/">
+
+
+
+
+
+  <title>前端开发总结（一） | apad station</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <style>
+.header-inner{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.headband{
+    display:none;
+}
+.posts-expand .post-eof{
+    width:75%;
+}
+.main-inner{
+    padding:20px;
+}
+#header{
+    background: url(http://theme-next.iissnan.com/assets/img/banner-2.jpg) 0 80%;
+    background-size: cover;
+}
+#header .header-inner{
+    padding-top:20px;
+    padding-bottom:10px;
+}
+</style>
+<script>
+(function(){
+
+    var customBgContentStyle = document.createElement('style')
+    customBgContentStyle.innerText = 
+    `.header-inner,.main-inner{
+        background-color: #dddd;
+    }
+    #header{
+        background:none;
+    }`
+    
+    var body = document.body,
+        pageHeight = window.innerHeight
+        
+    var el = document.createElement('div')
+        el.className = 'cus-bg'
+        el.style.height = pageHeight + 'px'
+    var style = document.createElement('style')
+        style.innerText = `
+        .cus-bg{
+            position: fixed;
+            top: 0;left: 0;
+            width:100%;
+            z-index: -1;
+            background: no-repeat center/cover;
+        }`
+    
+    body.appendChild(el)
+    body.appendChild(style)
+    
+    window.bgImage = function(URL){
+        el.style.backgroundImage = `url(${URL})`
+        body.appendChild(customBgContentStyle)
+    }
+
+    window.bgImage = bgImage
+})()
+
+</script>
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">apad station</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">restart</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <div>some: </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://apading.xyz/posts/57045/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="apad">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/assets/img/favicon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="apad station">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">前端开发总结（一）</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-05T00:00:00+08:00">
+                2020-01-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/57045/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/57045/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>  阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>距离上次写的的hello world (again)有快4个月了吧，这也是过了一个学期了，借着<del>新年</del>的劲头写下一些关于前端开发的总结吧。</p>
+<a id="more"></a>
+<h1 id="关于JavaScript和V8"><a href="#关于JavaScript和V8" class="headerlink" title="关于JavaScript和V8"></a>关于JavaScript和V8</h1><p>以chrome为例，肯定都有了解它的运行js的引擎是一个名为V8的引擎，但是，<strong>V8引擎和浏览器并不是同一个东西</strong>，chrome是在V8引擎上<strong>增加了许多的安全限制（跨域）和对象（window）</strong>，所以百度出来nodejs用的就是V8引擎开发的和chrome的展现效果不同的原因就在这。<br><img src="https://img-blog.csdnimg.cn/2020010521350092.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNTM1NjEx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>关于V8是用C++编写的，js经过V8引擎会翻译成C++文件再运行，相当于一个<strong>套娃c++</strong>的语言了吧🤣 。<br><img src="https://img-blog.csdnimg.cn/20200105214611342.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNTM1NjEx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>但是，就因为这种<strong>套娃式</strong>的语言，现在的前端开发大部分都是这种形式，通过nodejs的I/O模块进行文件的文本读取，然后进行下一步的<strong>解释</strong>成html/js/css文件，再通过一些手段引用到需要用的html文件中</p>
+<blockquote>
+<p>其实那些所谓的<strong>解释器</strong>的插件，例如vue.js，js-yaml.js都是通过读取字符串进行解释的，nodejs只是提供了不用把这些需要解释的字符串写入html使其变得很长很复杂的条件。<br><img src="https://img-blog.csdnimg.cn/20200105214711449.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNTM1NjEx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+</blockquote>
+<h1 id="nodejs和前端的关系"><a href="#nodejs和前端的关系" class="headerlink" title="nodejs和前端的关系"></a>nodejs和前端的关系</h1><p>其实自己一开始在runoob上也有见过关于nodejs的介绍，以为那个是后端才需要学的，真尼玛误导了好久一段时间了😟<br><img src="https://img-blog.csdnimg.cn/20200105225334514.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNTM1NjEx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>垃圾runoob，<del>但是作为一个编程语言入门的集合的网站还是可以看看的</del></p>
+<h2 id="以前和现在的前端开发的比较"><a href="#以前和现在的前端开发的比较" class="headerlink" title="以前和现在的前端开发的比较"></a>以前和现在的前端开发的比较</h2><p>以上也说了nodejs的出现解锁了I/O的功能，这也就成就了现在的<del>网页</del>前端开发不再像以前一样，一个html文件上写满了<strong>已经压缩的或者主要的js文件</strong><br><img src="https://img-blog.csdnimg.cn/20200105220713165.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200105220751134.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNTM1NjEx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>现在的开发方式就变成了模块的方式，像是java的那种<strong>namespace下的class</strong>一样，需要你<strong>引用相对应的namespace</strong>才能使用它以下的class，以nodejs环境下举个🌰<br>目录：<br><img src="https://img-blog.csdnimg.cn/20200105222558796.png" alt="在这里插入图片描述"><br>代码：</p>
+<ol>
+<li>index.js</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> A = <span class="built_in">require</span>(<span class="string">'./a.js'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(A)</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>a.js</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">'this is a.js!!'</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = a</span><br></pre></td></tr></table></figure>
+
+<p>运行结果<br><img src="https://img-blog.csdnimg.cn/20200105221932974.png" alt="在这里插入图片描述"><br><strong>但是，要注意这里只能在nodejs环境才有require方法和module.exports对象，在浏览器下直接使用index.js会出现以下问题</strong><br><img src="https://img-blog.csdnimg.cn/20200105222355804.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNTM1NjEx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2020010522224896.png" alt="在这里插入图片描述"><br><strong>相对应的，浏览器下并没有require方法和module.exports对象</strong><br><img src="https://img-blog.csdnimg.cn/20200105222347332.png" alt="在这里插入图片描述"><br>所以，为了让前端一样拥有<strong>模块化语法</strong>的插件<strong>webpack</strong>也随着nodejs诞生了，至今也还一直处于前端开发中的主角地位</p>
+<h2 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h2><p><a href="https://www.webpackjs.com/" target="_blank" rel="noopener">官网</a><br>简单来说，就是把yaml，vue，markdown等等文件通过js解释和打包成浏览器可用的js文件<br><img src="https://img-blog.csdnimg.cn/20200105231652282.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNTM1NjEx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>在上面演示的项目进行webpack打包后会生成一个主文件，<strong>没有混淆和压缩</strong>的情况下是这样的</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">modules</span>) </span>&#123; <span class="comment">// webpackBootstrap</span></span><br><span class="line">  <span class="keyword">var</span> installedModules = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">__webpack_require__</span>(<span class="params">moduleId</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (installedModules[moduleId]) &#123;</span><br><span class="line">      <span class="keyword">return</span> installedModules[moduleId].exports;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> <span class="built_in">module</span> = installedModules[moduleId] = &#123;</span><br><span class="line">      i: moduleId,</span><br><span class="line">      l: <span class="literal">false</span>,</span><br><span class="line">      exports: &#123;&#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    modules[moduleId].call(<span class="built_in">module</span>.exports, <span class="built_in">module</span>, <span class="built_in">module</span>.exports, __webpack_require__);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">module</span>.l = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">module</span>.exports;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  __webpack_require__.m = modules;</span><br><span class="line"></span><br><span class="line">  __webpack_require__.c = installedModules;</span><br><span class="line"></span><br><span class="line">  __webpack_require__.d = <span class="function"><span class="keyword">function</span> (<span class="params">exports, name, getter</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!__webpack_require__.o(exports, name)) &#123;</span><br><span class="line">      <span class="built_in">Object</span>.defineProperty(exports, name, &#123; <span class="attr">enumerable</span>: <span class="literal">true</span>, <span class="attr">get</span>: getter &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  __webpack_require__.r = <span class="function"><span class="keyword">function</span> (<span class="params">exports</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">Symbol</span> !== <span class="string">'undefined'</span> &amp;&amp; <span class="built_in">Symbol</span>.toStringTag) &#123;</span><br><span class="line">      <span class="built_in">Object</span>.defineProperty(exports, <span class="built_in">Symbol</span>.toStringTag, &#123; <span class="attr">value</span>: <span class="string">'Module'</span> &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">Object</span>.defineProperty(exports, <span class="string">'__esModule'</span>, &#123; <span class="attr">value</span>: <span class="literal">true</span> &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  __webpack_require__.t = <span class="function"><span class="keyword">function</span> (<span class="params">value, mode</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (mode &amp; <span class="number">1</span>) value = __webpack_require__(value);</span><br><span class="line">    <span class="keyword">if</span> (mode &amp; <span class="number">8</span>) <span class="keyword">return</span> value;</span><br><span class="line">    <span class="keyword">if</span> ((mode &amp; <span class="number">4</span>) &amp;&amp; <span class="keyword">typeof</span> value === <span class="string">'object'</span> &amp;&amp; value &amp;&amp; value.__esModule) <span class="keyword">return</span> value;</span><br><span class="line">    <span class="keyword">var</span> ns = <span class="built_in">Object</span>.create(<span class="literal">null</span>);</span><br><span class="line">    __webpack_require__.r(ns);</span><br><span class="line">    <span class="built_in">Object</span>.defineProperty(ns, <span class="string">'default'</span>, &#123; <span class="attr">enumerable</span>: <span class="literal">true</span>, <span class="attr">value</span>: value &#125;);</span><br><span class="line">    <span class="keyword">if</span> (mode &amp; <span class="number">2</span> &amp;&amp; <span class="keyword">typeof</span> value != <span class="string">'string'</span>) <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> value) __webpack_require__.d(ns, key, <span class="function"><span class="keyword">function</span> (<span class="params">key</span>) </span>&#123; <span class="keyword">return</span> value[key]; &#125;.bind(<span class="literal">null</span>, key));</span><br><span class="line">    <span class="keyword">return</span> ns;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  __webpack_require__.n = <span class="function"><span class="keyword">function</span> (<span class="params">module</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> getter = <span class="built_in">module</span> &amp;&amp; <span class="built_in">module</span>.__esModule ?</span><br><span class="line">      <span class="function"><span class="keyword">function</span> <span class="title">getDefault</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="built_in">module</span>[<span class="string">'default'</span>]; &#125; :</span><br><span class="line">      <span class="function"><span class="keyword">function</span> <span class="title">getModuleExports</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="built_in">module</span>; &#125;;</span><br><span class="line">    __webpack_require__.d(getter, <span class="string">'a'</span>, getter);</span><br><span class="line">    <span class="keyword">return</span> getter;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  __webpack_require__.o = <span class="function"><span class="keyword">function</span> (<span class="params">object, property</span>) </span>&#123; <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.hasOwnProperty.call(object, property); &#125;;</span><br><span class="line"></span><br><span class="line">  __webpack_require__.p = <span class="string">""</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> __webpack_require__(__webpack_require__.s = <span class="string">"./src/index.js"</span>);</span><br><span class="line">&#125;)</span><br><span class="line">  (&#123;</span><br><span class="line">    <span class="string">"./src/a.js"</span>:</span><br><span class="line">      (<span class="function"><span class="keyword">function</span> (<span class="params">module, exports</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> a = <span class="string">'this is a.js!!'</span></span><br><span class="line"></span><br><span class="line">        <span class="built_in">module</span>.exports = a</span><br><span class="line"></span><br><span class="line">      &#125;),</span><br><span class="line">    <span class="string">"./src/index.js"</span>:</span><br><span class="line">      (<span class="function"><span class="keyword">function</span> (<span class="params">module, exports, __webpack_require__</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> A = __webpack_require__(<span class="comment">/*! ./a.js */</span> <span class="string">"./src/a.js"</span>)</span><br><span class="line"></span><br><span class="line">        <span class="built_in">console</span>.log(A)</span><br><span class="line"></span><br><span class="line">      &#125;)</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+
+<p>这一个文件就相当于<strong>模块化语法环境</strong>下打包的js文件，引入html文件即可得到我们想要的结果<br><img src="https://img-blog.csdnimg.cn/20200105224002596.png" alt="在这里插入图片描述"></p>
+<h2 id="js模块化"><a href="#js模块化" class="headerlink" title="js模块化"></a>js模块化</h2><p>看上去一套下来感觉是好麻烦的，为什么不像原本那样按顺序引入js文件然后使用里面的变量或函数那不是更简单快捷吗？？？</p>
+<p>这其实还是涉及到了js本身的问题，<strong>js在es6以前，是没有块级作用域的，只有函数作用域和全局作用域</strong>，在这种情况下，js按顺序引进其实还有着<strong>变量提升</strong>的问题，在一些情况下会出现<strong>变量名冲突，js并不会报错还将新的值覆盖旧的值上</strong></p>
+<p>关于js模块化的历程可以参考<a href="http://huangxuan.me/2015/07/09/js-module-7day/" target="_blank" rel="noopener">该博客</a><br>或者看这个总结：<strong>解决变量名冲突，js各个文件间的变量和函数高耦合的问题</strong></p>
+<h2 id="个人小结"><a href="#个人小结" class="headerlink" title="个人小结"></a>个人小结</h2><p>其实当时9月份的时候已经学会了nodejs，然而只是用来代替java作为服务端的一个软件，也算是<del>懒</del>runoob害人不浅吧，当时只是把自己限制在了前后端分离开发的阶段，nodejs+express作为传输json的服务端而已，开发前端在hbuilder上使用着过时的jq和bootstarp，当时并没有想过nodejs竟然就是前端开发的主流吧，现在回想起自己写的<del>很自豪的</del>那个pjax项目还真有点想笑😂hbuilder作为自己第一个高效开发网页的编辑器，也是因为它的<strong>热更新服务器</strong>的<del>特色</del>所吸引才用了挺久的，后面接触了webpack才发现这东西早都有了，而且hbuilder作为一个编辑器相对于现在用的vscode，插件少，es6语法好多都不支持！！！算是一个很失败的东西，好的编辑器才是前端开发前进的一个垫脚石吧。</p>
+<p><del>等我不懒了，应该还会写接下来需要说的好多的关于浏览器，AST，vue原理，闭包原理之类的吧</del></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/12151/" rel="next" title="一些前端的知识">
+                <i class="fa fa-chevron-left"></i> 一些前端的知识
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/15805/" rel="prev" title="UnhandledPromiseRejectionWarning: Error: write EPROTO 14100:error:1425F102:SSL">
+                UnhandledPromiseRejectionWarning: Error: write EPROTO 14100:error:1425F102:SSL <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/assets/img/favicon.jpg" alt="apad">
+            
+              <p class="site-author-name" itemprop="name">apad</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/apades" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:apad2@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#关于JavaScript和V8"><span class="nav-number">1.</span> <span class="nav-text">关于JavaScript和V8</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nodejs和前端的关系"><span class="nav-number">2.</span> <span class="nav-text">nodejs和前端的关系</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#以前和现在的前端开发的比较"><span class="nav-number">2.1.</span> <span class="nav-text">以前和现在的前端开发的比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#webpack"><span class="nav-number">2.2.</span> <span class="nav-text">webpack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js模块化"><span class="nav-number">2.3.</span> <span class="nav-text">js模块化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#个人小结"><span class="nav-number">2.4.</span> <span class="nav-text">个人小结</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019-9-14 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">apad</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+ 
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+  <div>
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1278128649'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "v1.cnzz.com/z_stat.php%3Fid%3D1278128649%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+    <script src="//s95.cnzz.com/z_stat.php?id=true&web_id=true" language="JavaScript"></script>
+  </div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/valine/1.3.10/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'zhxkiCxv6ufWvr03pKlAdxrc-gzGzoHsz',
+        appKey: 'RRJkHM4EPK8DPJDEJkJ5twKE',
+        placeholder: '添加评论···',
+        avatar:'retro',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
