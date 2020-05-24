@@ -97,7 +97,7 @@
 <meta name="keywords" content="jquery,js,jquery,javascript,html5,nodejs,前端,程序员,Coder,html,css,css3,">
 <meta property="og:type" content="website">
 <meta property="og:title" content="apad station">
-<meta property="og:url" content="https://apading.xyz/index.html">
+<meta property="og:url" content="https://apading.xyz/page/2/index.html">
 <meta property="og:site_name" content="apad station">
 <meta property="og:description" content="仅仅一个刚接触前端的菜鸟">
 <meta property="og:locale" content="zh-CN">
@@ -134,7 +134,7 @@
 
 
 
-  <link rel="canonical" href="https://apading.xyz/">
+  <link rel="canonical" href="https://apading.xyz/page/2/">
 
 
 
@@ -330,7 +330,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://apading.xyz/posts/23984/">
+    <link itemprop="mainEntityOfPage" href="https://apading.xyz/posts/49904/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="apad">
@@ -349,7 +349,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/posts/23984/" itemprop="url">nodejs更新后hexo没法deploy</a></h2>
+                <a class="post-title-link" href="/posts/49904/" itemprop="url">vuex快速学习笔记</a></h2>
         
 
         <div class="post-meta">
@@ -361,8 +361,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-24T00:00:00+08:00">
-                2020-05-24
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-14T00:00:00+08:00">
+                2019-10-14
               </time>
             
 
@@ -380,8 +380,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/posts/23984/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/posts/23984/" itemprop="commentCount"></span>
+                <a href="/posts/49904/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/49904/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -410,287 +410,13 @@
 
       
         
-          
-            <p>大致错误如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">FATAL Something&apos;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html</span><br><span class="line">TypeError [ERR_INVALID_ARG_TYPE]: The &quot;mode&quot; argument must be integer. Received an instance of Object</span><br><span class="line">    at copyFile (fs.js:1890:10)</span><br><span class="line">    at tryCatcher (C:\Users\Administrator\blog\node_modules\bluebird\js\release\util.js:16:23)</span><br><span class="line">    at ret (eval at makeNodePromisifiedEval (C:\Users\Administrator\blog\node_modules\bluebird\js\release\promisify.js:184:12), &lt;anonymous&gt;:13:39)</span><br><span class="line">    at C:\Users\Administrator\blog\node_modules\hexo-deployer-git\node_modules\hexo-fs\lib\fs.js:144:39</span><br><span class="line">    at tryCatcher (C:\Users\Administrator\blog\node_modules\bluebird\js\release\util.js:16:23)</span><br><span class="line">    at Promise._settlePromiseFromHandler (C:\Users\Administrator\blog\node_modules\bluebird\js\release\promise.js:517:31)</span><br><span class="line">    at Promise._settlePromise (C:\Users\Administrator\blog\node_modules\bluebird\js\release\promise.js:574:18)</span><br><span class="line">    at Promise._settlePromise0 (C:\Users\Administrator\blog\node_modules\bluebird\js\release\promise.js:619:10)</span><br><span class="line">    at Promise._settlePromises (C:\Users\Administrator\blog\node_modules\bluebird\js\release\promise.js:699:18)</span><br><span class="line">    at Promise._fulfill (C:\Users\Administrator\blog\node_modules\bluebird\js\release\promise.js:643:18)</span><br><span class="line">    at Promise._resolveCallback (C:\Users\Administrator\blog\node_modules\bluebird\js\release\promise.js:437:57)</span><br><span class="line">    at Promise._settlePromiseFromHandler (C:\Users\Administrator\blog\node_modules\bluebird\js\release\promise.js:529:17)</span><br><span class="line">    at Promise._settlePromise (C:\Users\Administrator\blog\node_modules\bluebird\js\release\promise.js:574:18)</span><br><span class="line">    at Promise._settlePromise0 (C:\Users\Administrator\blog\node_modules\bluebird\js\release\promise.js:619:10)</span><br><span class="line">    at Promise._settlePromises (C:\Users\Administrator\blog\node_modules\bluebird\js\release\promise.js:699:18)</span><br><span class="line">    at Promise._fulfill (C:\Users\Administrator\blog\node_modules\bluebird\js\release\promise.js:643:18)</span><br></pre></td></tr></table></figure>
-
-<p>从<a href="https://zhuanlan.zhihu.com/p/136552969" target="_blank" rel="noopener">知乎</a>这找到的原因是<strong>nodejs版本太高</strong>造成的，但是自己又不想卸载原本的nodejs版本，所以在网上找了个叫<a href="https://github.com/coreybutler/nvm-windows" target="_blank" rel="noopener">nvm</a>的工具。</p>
-<p>要注意的是使用这个工具最好选择<code>setup版本</code>，<code>no-install版本</code>有些问题设置了path后全局里还没法直接用，会报出以下错误：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR open \settings.txt: The system cannot find the file specified.</span><br></pre></td></tr></table></figure>
-
-<p>要设置<a href="https://github.com/coreybutler/nvm-windows/issues/68" target="_blank" rel="noopener">config什么</a>才可以用的太麻烦了</p>
-<p><strong>前面的所有都需要删除原有的nodejs才可以使用<code>nvm use [version]</code> 命令</strong></p>
-<p>而且使用<code>nvm install [version]</code>安装npm时会发生错误，需要修改npm的源，node也可以改（反正都阿里云更快点</p>
-<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nvm node_mirror https:<span class="regexp">//</span><span class="built_in">npm</span>.taobao.org<span class="regexp">/mirrors/node/</span></span><br><span class="line">nvm npm_mirror https:<span class="regexp">//</span><span class="built_in">npm</span>.taobao.org<span class="regexp">/mirrors/npm/</span></span><br></pre></td></tr></table></figure>
-
-<p>接下来就可以切换版本进行<code>hexo d</code>了</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://apading.xyz/posts/15805/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="apad">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/assets/img/favicon.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="apad station">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/posts/15805/" itemprop="url">UnhandledPromiseRejectionWarning: Error: write EPROTO 14100:error:1425F102:SSL</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-18T00:00:00+08:00">
-                2020-05-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/posts/15805/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/posts/15805/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="https://img-blog.csdnimg.cn/20200518131911722.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNTM1NjEx,size_16,color_FFFFFF,t_70" alt="error"><br>当时是想用nodejs爬一个漫画网站没想到出了这个ssl的问题，终于在stackoverflow上找到了是<strong>nodejs和TSL版本</strong>相关，我爬的这个破网站用的TSLv1.0，nodejs11.4后就默认是TSLv1.2，所以要用TSLv1.0就使用参数<code>--tls-min-v1.0</code>。例如</p>
-<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">node</span> <span class="title">--tls-min-v1</span>.<span class="number">0</span> ./request.js</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p><a href="https://stackoverflow.com/questions/56293822/how-to-fix-eproto-error-after-upgrading-nodes-version" target="_blank" rel="noopener">stackoverflow地址</a></p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://apading.xyz/posts/23984/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="apad">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/assets/img/favicon.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="apad station">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/posts/23984/" itemprop="url">webpack搭建nodejs后端环境</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-18T00:00:00+08:00">
-                2020-05-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/posts/23984/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/posts/23984/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>webpack好多样例都是用在前端的，百度也很难找到一个像样的后端打包教程，自己从谷歌还有webpack官方文档总结一下吧。</p>
+          <p>首先，需要考虑为什么上vuex</p>
+<p>这也是我在开发过程中遇到的一个小问题，如果类似下面有<strong>多个组件</strong>嵌套的话用<code>props</code>和<code>:data=&quot;data&quot;</code>会显得太繁琐</p>
+<p>而且根据<strong>官方文档</strong>说的<code>props</code>的数据是单向的，想要改变数据使用<code>$emit(&#39;xxx&#39;)</code>也很麻烦</p>
+<p><img src="https://img-blog.csdnimg.cn/20191014191124470.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNTM1NjEx,size_16,color_FFFFFF,t_70" alt="需求"></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/posts/23984/" rel="contents">
+            <a class="btn" href="/posts/49904/" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -741,7 +467,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://apading.xyz/posts/57045/">
+    <link itemprop="mainEntityOfPage" href="https://apading.xyz/posts/41474/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="apad">
@@ -760,7 +486,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/posts/57045/" itemprop="url">前端开发总结（一）</a></h2>
+                <a class="post-title-link" href="/posts/41474/" itemprop="url">gulp4.0使用gulp-connect插件</a></h2>
         
 
         <div class="post-meta">
@@ -772,8 +498,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-05T00:00:00+08:00">
-                2020-01-05
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-01T00:00:00+08:00">
+                2019-10-01
               </time>
             
 
@@ -783,28 +509,6 @@
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端开发总结/" itemprop="url" rel="index">
-                    <span itemprop="name">前端开发总结</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -813,8 +517,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/posts/57045/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/posts/57045/" itemprop="commentCount"></span>
+                <a href="/posts/41474/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/41474/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -843,10 +547,10 @@
 
       
         
-          <p>距离上次写的的hello world (again)有快4个月了吧，这也是过了一个学期了，借着<del>新年</del>的劲头写下一些关于前端开发的总结吧。</p>
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>虽然网上有许多类似的gulp3.0的task和series配套用法：<br><code>gulp.task(&#39;server&#39;, gulp.series(&#39;connect&#39;, &#39;watch&#39;))</code><br>但还是莫名其妙没触发更新</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/posts/57045/" rel="contents">
+            <a class="btn" href="/posts/41474/" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -897,7 +601,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://apading.xyz/posts/12151/">
+    <link itemprop="mainEntityOfPage" href="https://apading.xyz/posts/24764/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="apad">
@@ -916,7 +620,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/posts/12151/" itemprop="url">一些前端的知识</a></h2>
+                <a class="post-title-link" href="/posts/24764/" itemprop="url">简单实现vue-cli下的动态组件</a></h2>
         
 
         <div class="post-meta">
@@ -928,8 +632,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-22T00:00:00+08:00">
-                2019-11-22
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-25T00:00:00+08:00">
+                2019-09-25
               </time>
             
 
@@ -947,8 +651,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/posts/12151/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/posts/12151/" itemprop="commentCount"></span>
+                <a href="/posts/24764/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/24764/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -977,10 +681,278 @@
 
       
         
-          <p>学到的和认识的</p>
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这只是开发中简单实现的，可能会繁琐，待改进中</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/posts/12151/" rel="contents">
+            <a class="btn" href="/posts/24764/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://apading.xyz/posts/50469/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="apad">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/assets/img/favicon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="apad station">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/50469/" itemprop="url">Hello World (again)</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-14T00:00:00+08:00">
+                2019-09-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/50469/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/50469/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>还记得几个月前也下过<code>hexo</code>，一样用的<code>yilia</code>，但可惜的是腾讯服务器当时没法继续白嫖学生价服务器，也懒得拿出<strong>仅写的几篇废话博文</strong>了，仅此作怀念吧</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/posts/50469/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://apading.xyz/posts/26878/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="apad">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/assets/img/favicon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="apad station">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/26878/" itemprop="url">解决nodejs的Connection lost ：The server closed the connection</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-13T00:00:00+08:00">
+                2019-09-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/26878/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/26878/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这是由于mysql自带的一段时间<strong>无动作</strong>会自动关闭的机制</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/posts/26878/" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1022,7 +994,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 

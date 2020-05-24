@@ -82,7 +82,7 @@
 
 
 
-  <meta name="keywords" content="nodejs,">
+  <meta name="keywords" content="nodejs,webpack,">
 
 
 
@@ -93,18 +93,22 @@
 
 
 
-<meta name="description" content="大致错误如下 123456789101112131415161718FATAL Something&amp;apos;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.htmlTypeError [ERR_INVALID_ARG_TYPE]: The &amp;quot;mode&amp;quot; ar">
-<meta name="keywords" content="nodejs">
+<meta name="description" content="webpack好多样例都是用在前端的，百度也很难找到一个像样的后端打包教程，自己从谷歌还有webpack官方文档总结一下吧。">
+<meta name="keywords" content="nodejs,webpack">
 <meta property="og:type" content="article">
-<meta property="og:title" content="nodejs更新后hexo没法deploy">
+<meta property="og:title" content="webpack搭建nodejs后端环境">
 <meta property="og:url" content="https://apading.xyz/posts/23984/index.html">
 <meta property="og:site_name" content="apad station">
-<meta property="og:description" content="大致错误如下 123456789101112131415161718FATAL Something&amp;apos;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.htmlTypeError [ERR_INVALID_ARG_TYPE]: The &amp;quot;mode&amp;quot; ar">
+<meta property="og:description" content="webpack好多样例都是用在前端的，百度也很难找到一个像样的后端打包教程，自己从谷歌还有webpack官方文档总结一下吧。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-05-23T16:52:50.104Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200524105645723.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNTM1NjEx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200524110521756.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNTM1NjEx,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200524111321534.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNTM1NjEx,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2020-05-24T03:23:25.750Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nodejs更新后hexo没法deploy">
-<meta name="twitter:description" content="大致错误如下 123456789101112131415161718FATAL Something&amp;apos;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.htmlTypeError [ERR_INVALID_ARG_TYPE]: The &amp;quot;mode&amp;quot; ar">
+<meta name="twitter:title" content="webpack搭建nodejs后端环境">
+<meta name="twitter:description" content="webpack好多样例都是用在前端的，百度也很难找到一个像样的后端打包教程，自己从谷歌还有webpack官方文档总结一下吧。">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200524105645723.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNTM1NjEx,size_16,color_FFFFFF,t_70">
 
 
 
@@ -141,7 +145,7 @@
 
 
 
-  <title>nodejs更新后hexo没法deploy | apad station</title>
+  <title>webpack搭建nodejs后端环境 | apad station</title>
   
 
 
@@ -347,7 +351,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">nodejs更新后hexo没法deploy</h2>
+          <h2 class="post-title" itemprop="name headline">webpack搭建nodejs后端环境</h2>
         
 
         <div class="post-meta">
@@ -359,8 +363,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-23T17:23:52+08:00">
-                2020-05-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-18T00:00:00+08:00">
+                2020-05-18
               </time>
             
 
@@ -412,19 +416,38 @@
       
 
       
-        <p>大致错误如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">FATAL Something&apos;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html</span><br><span class="line">TypeError [ERR_INVALID_ARG_TYPE]: The &quot;mode&quot; argument must be integer. Received an instance of Object</span><br><span class="line">    at copyFile (fs.js:1890:10)</span><br><span class="line">    at tryCatcher (C:\Users\Administrator\blog\node_modules\bluebird\js\release\util.js:16:23)</span><br><span class="line">    at ret (eval at makeNodePromisifiedEval (C:\Users\Administrator\blog\node_modules\bluebird\js\release\promisify.js:184:12), &lt;anonymous&gt;:13:39)</span><br><span class="line">    at C:\Users\Administrator\blog\node_modules\hexo-deployer-git\node_modules\hexo-fs\lib\fs.js:144:39</span><br><span class="line">    at tryCatcher (C:\Users\Administrator\blog\node_modules\bluebird\js\release\util.js:16:23)</span><br><span class="line">    at Promise._settlePromiseFromHandler (C:\Users\Administrator\blog\node_modules\bluebird\js\release\promise.js:517:31)</span><br><span class="line">    at Promise._settlePromise (C:\Users\Administrator\blog\node_modules\bluebird\js\release\promise.js:574:18)</span><br><span class="line">    at Promise._settlePromise0 (C:\Users\Administrator\blog\node_modules\bluebird\js\release\promise.js:619:10)</span><br><span class="line">    at Promise._settlePromises (C:\Users\Administrator\blog\node_modules\bluebird\js\release\promise.js:699:18)</span><br><span class="line">    at Promise._fulfill (C:\Users\Administrator\blog\node_modules\bluebird\js\release\promise.js:643:18)</span><br><span class="line">    at Promise._resolveCallback (C:\Users\Administrator\blog\node_modules\bluebird\js\release\promise.js:437:57)</span><br><span class="line">    at Promise._settlePromiseFromHandler (C:\Users\Administrator\blog\node_modules\bluebird\js\release\promise.js:529:17)</span><br><span class="line">    at Promise._settlePromise (C:\Users\Administrator\blog\node_modules\bluebird\js\release\promise.js:574:18)</span><br><span class="line">    at Promise._settlePromise0 (C:\Users\Administrator\blog\node_modules\bluebird\js\release\promise.js:619:10)</span><br><span class="line">    at Promise._settlePromises (C:\Users\Administrator\blog\node_modules\bluebird\js\release\promise.js:699:18)</span><br><span class="line">    at Promise._fulfill (C:\Users\Administrator\blog\node_modules\bluebird\js\release\promise.js:643:18)</span><br></pre></td></tr></table></figure>
+        <p>webpack好多样例都是用在前端的，百度也很难找到一个像样的后端打包教程，自己从谷歌还有webpack官方文档总结一下吧。</p>
+<a id="more"></a>
+<h1 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h1><p>首先准备了一个<code>main.js</code>这个入口文件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> request <span class="keyword">from</span> <span class="string">'./request'</span></span><br><span class="line"><span class="keyword">import</span> cherrio <span class="keyword">from</span> <span class="string">'./query'</span></span><br><span class="line"></span><br><span class="line">request(<span class="string">'https://www.baidu.com/s?ie=UTF-8&amp;wd=axios'</span>).then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> $ = cherrio(res)</span><br><span class="line">    <span class="keyword">var</span> rs = $([</span><br><span class="line">        &#123;</span><br><span class="line">            test:<span class="string">'.c-container'</span>,</span><br><span class="line">            attr:<span class="string">'srcid'</span></span><br><span class="line">        &#125;</span><br><span class="line">    ])</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(rs))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-<p>从<a href="https://zhuanlan.zhihu.com/p/136552969" target="_blank" rel="noopener">知乎</a>这找到的原因是<strong>nodejs版本太高</strong>造成的，但是自己又不想卸载原本的nodejs版本，所以在网上找了个叫<a href="https://github.com/coreybutler/nvm-windows" target="_blank" rel="noopener">nvm</a>的工具。</p>
-<p>要注意的是使用这个工具最好选择<code>setup版本</code>，<code>no-install版本</code>有些问题设置了path后全局里还没法直接用，会报出以下错误：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR open \settings.txt: The system cannot find the file specified.</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>上面的代码只是个简单的爬虫balabala的，其中用了nodejs环境暂不支持的es6 import关键字。</p>
+</blockquote>
+<p>然后我们在使用webpack api写一个<code>webpack.js</code>的webpack配置文件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">webpack(&#123;</span><br><span class="line">    mode: <span class="string">"development"</span>,</span><br><span class="line">    entry: <span class="string">'./main.js'</span>,</span><br><span class="line">    output: &#123;</span><br><span class="line">        filename: <span class="string">'bundle.js'</span>,</span><br><span class="line">        path: __dirname</span><br><span class="line">    &#125;,</span><br><span class="line">    target: <span class="string">'node'</span> <span class="comment">// 这是最关键的</span></span><br><span class="line">&#125;, (err, stats) =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'err:'</span>, err)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-<p>要设置<a href="https://github.com/coreybutler/nvm-windows/issues/68" target="_blank" rel="noopener">config什么</a>才可以用的太麻烦了</p>
-<p><strong>前面的所有都需要删除原有的nodejs才可以使用<code>nvm use [version]</code> 命令</strong></p>
-<p>而且使用<code>nvm install [version]</code>安装npm时会发生错误，需要修改npm的源，node也可以改（反正都阿里云更快点</p>
-<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nvm node_mirror https:<span class="regexp">//</span><span class="built_in">npm</span>.taobao.org<span class="regexp">/mirrors/node/</span></span><br><span class="line">nvm npm_mirror https:<span class="regexp">//</span><span class="built_in">npm</span>.taobao.org<span class="regexp">/mirrors/npm/</span></span><br></pre></td></tr></table></figure>
+<p>其中的<a href="https://webpack.docschina.org/configuration/target/" target="_blank" rel="noopener">target配置项</a>是打包的目标环境，默认为浏览器环境，加了这个就可以直接打包nodejs环境的js了</p>
+<h1 id="压缩优化"><a href="#压缩优化" class="headerlink" title="压缩优化"></a>压缩优化</h1><p>但是这个并没有结束，打包出来的<code>bundle.js</code>变得非常大，即使自己的全部js文件都非常的小<br><img src="https://img-blog.csdnimg.cn/20200524105645723.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNTM1NjEx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这时就需要用到webpack的<a href="https://webpack.docschina.org/configuration/externals/#function" target="_blank" rel="noopener">externals</a>了</p>
+<h2 id="简单概括"><a href="#简单概括" class="headerlink" title="简单概括"></a>简单概括</h2><p>这个externals配置项原本就是为了<strong>前端CDN引入js，优化bundle.js的大小</strong>，比如</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">webpack(&#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">    externals:&#123;</span><br><span class="line">        axios:<span class="string">"axios"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>接下来就可以切换版本进行<code>hexo d</code>了</p>
+<p>在打包出的<code>bundle.js</code>中的axios模块就只有这么点，没有将axios模块全部引进去，其中的<strong>axios为全局中的axios，就实现了CDN引入js的作用</strong><br><img src="https://img-blog.csdnimg.cn/20200524110521756.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNTM1NjEx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="实际运用"><a href="#实际运用" class="headerlink" title="实际运用"></a>实际运用</h2><blockquote>
+<p>官方在externas配置项是有推荐<a href="https://www.npmjs.com/package/webpack-node-externals" target="_blank" rel="noopener">webpack-node-externals</a>这个插件的，但实际使用并没有效果，打包出来的大小还是1.46MB，也查不出什么问题</p>
+</blockquote>
+<p>利用<a href="#简单概括">简单概括</a>的特性自己写了一段js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> package = <span class="built_in">require</span>(<span class="string">'package.json'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> externals = &#123;&#125;,</span><br><span class="line">    pends = <span class="built_in">Object</span>.assign(package.dependencies,package.devDependencies)</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">in</span> pends)&#123;</span><br><span class="line">    externals[i] = <span class="string">`require('<span class="subst">$&#123;i&#125;</span>')`</span></span><br><span class="line">&#125;</span><br><span class="line">webpack(&#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">    externals</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>就能很明显的看到<code>bundle.js</code>变得超级小了<br><img src="https://img-blog.csdnimg.cn/20200524111321534.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNTM1NjEx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h1 id="debugger"><a href="#debugger" class="headerlink" title="debugger"></a>debugger</h1><p>需要dubgger的话需要使用<a href="https://webpack.docschina.org/configuration/devtool/" target="_blank" rel="noopener">devtools</a>配置项</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">webpack(&#123;</span><br><span class="line">	<span class="comment">//...</span></span><br><span class="line">    mode: <span class="string">"development"</span>,</span><br><span class="line">    target: <span class="string">'node'</span>,</span><br><span class="line">    devtool: <span class="string">'source-map'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>然后在vscode中,推荐这一个配置就可以在定位这个<code>bundle.js</code>文件就可以debugger了</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"version"</span>: <span class="string">"0.2.0"</span>,</span><br><span class="line">    <span class="attr">"configurations"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"type"</span>: <span class="string">"node"</span>,</span><br><span class="line">            <span class="attr">"request"</span>: <span class="string">"launch"</span>,</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"node 文件"</span>,</span><br><span class="line">            <span class="attr">"program"</span>: <span class="string">"$&#123;file&#125;"</span>,</span><br><span class="line">            <span class="attr">"skipFiles"</span>: [</span><br><span class="line">                <span class="string">"&lt;node_internals&gt;/**"</span></span><br><span class="line">            ],</span><br><span class="line">        &#125;</span><br><span class="line">     ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>唯一不足的是，目前没有找到vscode + sourcemap使用原生的断点功能debugger，目前的解决方法有两个</strong></p>
+<p>1.在代码中添加debugger<br>2.运行到debugger处时使用vscode的断点，下次再debugger时会保留这些断点</p>
 
       
     </div>
@@ -444,6 +467,8 @@
           
             <a href="/tags/nodejs/" rel="tag"># nodejs</a>
           
+            <a href="/tags/webpack/" rel="tag"># webpack</a>
+          
         </div>
       
 
@@ -455,8 +480,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/15805/" rel="next" title="UnhandledPromiseRejectionWarning: Error: write EPROTO 14100:error:1425F102:SSL">
-                <i class="fa fa-chevron-left"></i> UnhandledPromiseRejectionWarning: Error: write EPROTO 14100:error:1425F102:SSL
+              <a href="/posts/57045/" rel="next" title="前端开发总结（一）">
+                <i class="fa fa-chevron-left"></i> 前端开发总结（一）
               </a>
             
           </div>
@@ -464,6 +489,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/15805/" rel="prev" title="UnhandledPromiseRejectionWarning: Error: write EPROTO 14100:error:1425F102:SSL">
+                UnhandledPromiseRejectionWarning: Error: write EPROTO 14100:error:1425F102:SSL <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -518,8 +547,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -536,12 +574,21 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
             
 
             
@@ -549,7 +596,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -588,6 +635,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#入门"><span class="nav-number">1.</span> <span class="nav-text">入门</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#压缩优化"><span class="nav-number">2.</span> <span class="nav-text">压缩优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简单概括"><span class="nav-number">2.1.</span> <span class="nav-text">简单概括</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实际运用"><span class="nav-number">2.2.</span> <span class="nav-text">实际运用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#debugger"><span class="nav-number">3.</span> <span class="nav-text">debugger</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
